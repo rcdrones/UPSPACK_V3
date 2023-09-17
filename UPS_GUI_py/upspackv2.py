@@ -11,6 +11,8 @@ class UPS2:
         self.ser  = serial.Serial(port,9600)        
         
     def get_data(self,nums):
+        self.ser.flushInput()
+
         while True:
             self.count = self.ser.inWaiting()
             
